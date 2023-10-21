@@ -9,15 +9,17 @@ function addTask(event) {
   const inputValue = inputContent.value;
 
   if (inputValue.trim() === "") {
-    errorMessage.textContent = "Por favor, preencha uma tarefa.";
+    errorMessage.textContent = "Este campo não pode estar vazio. Digite uma tarefa.";
     inputContent.classList.add("erroTaskExist");
+
   } else {
-    errorMessage.textContent = "";
-    inputContent.classList.remove("erroTaskExist");
 
     if (taskExists(inputValue.toLowerCase())) {
       errorMessage.textContent = "Essa tarefa já existe.";
+      inputContent.classList.add("erroTaskExist");
+
     } else {
+
       const newContent = document.createElement("li");
       newContent.textContent = inputValue;
 
@@ -38,3 +40,10 @@ function taskExists(taskText) {
   }
   return false;
 }
+
+  inputContent.addEventListener('focus', removeErrorMesage);
+
+  function removeErrorMesage() {
+    errorMessage.textContent = ''
+    inputContent.classList.remove('erroTaskExist')
+  }
