@@ -9,17 +9,15 @@ btnSave.addEventListener('click', addTask);
 function addTask(event) {
     const inputValue = inputContent.value;
 
-    event.preventDefault();
-    if(inputValue === '') {
+    if(inputValue.trim() === '') {
         alert('Preencha uma tarefa por favor!')
     } else{
-   
    
     const newContent = document.createElement('li');
     newContent.textContent = inputValue;
 
-    tasksContent.appendChild(newContent)
-    console.log(inputValue);
+    tasksContent.appendChild(newContent)   
 }
+    event.preventDefault();   
 }
 
