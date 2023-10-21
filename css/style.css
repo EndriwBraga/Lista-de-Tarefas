@@ -28,6 +28,7 @@ body {
     display: flex;
     justify-content: space-around;
     margin: 5rem auto;
+
 }
 
 .input-container {
@@ -41,6 +42,8 @@ body {
     padding: 1rem;
     border-radius: .5rem;
     font-size: 1.4rem;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 .tasks {
@@ -49,9 +52,21 @@ body {
 }
 
 ul li {
-    padding: 1.4rem;
+    margin-bottom: 1rem;
+    padding: 1.2rem;
     border: black solid 1px;
     border-radius: .5rem;
     font-size: 1.4rem;
 }
 
+.erroTaskExist {
+    border: 2px solid red;
+}
+
+.errorMessage {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: red;
+    margin-bottom: 2rem;
+}
