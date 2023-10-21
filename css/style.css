@@ -48,11 +48,10 @@ body {
     flex-direction: column;
 }
 
-/*
-.task-list {
-    padding: 1rem;
+ul li {
+    padding: 1.4rem;
     border: black solid 1px;
     border-radius: .5rem;
     font-size: 1.4rem;
 }
-/*
+
