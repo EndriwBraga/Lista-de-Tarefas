@@ -23,6 +23,11 @@ function addTask(event) {
       const newContent = document.createElement("li");
       newContent.textContent = inputValue;
 
+      const checkIcon = document.createElement("i");
+      checkIcon.classList.add("fa-solid", "fa-check");
+
+      newContent.appendChild(checkIcon);
+
       tasksContent.appendChild(newContent);
     }
 
