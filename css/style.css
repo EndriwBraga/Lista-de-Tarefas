@@ -20,10 +20,6 @@ body {
   margin-top: 5rem;
 }
 
-.header-container h1 {
-  margin-right: 3rem;
-}
-
 .input-button-container {
   display: flex;
   justify-content: space-around;
@@ -85,14 +81,14 @@ li .fa-solid {
 }
 
 .footer {
-  display: flex;
-  position: absolute;
-  bottom: 0;
   font-size: 2rem;
-  padding-bottom: 1rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .footer p {
+
   padding-right: 12rem;
 }
 
@@ -110,4 +106,61 @@ a {
 
 .fa-github {
   color: #181717;
+}
+
+/* Responsividade */
+
+@media(max-width: 600px) {
+  
+  body {
+    max-width: 100%;
+    margin: 1px;
+  }
+    .header-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header-container img {
+      display: none;
+    }
+
+    .input-button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: .5rem;
+    }
+
+    .input-container {
+      width: 80%;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul li {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      padding: .3rem;
+    }
+
+    .footer  {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+
+    .footer p {
+      display: none;
+    }
+
+ 
+
 }
