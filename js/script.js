@@ -9,26 +9,31 @@ function addTask(event) {
   const inputValue = inputContent.value;
 
   if (inputValue.trim() === "") {
-    errorMessage.textContent = "Este campo não pode estar vazio. Digite uma tarefa.";
+    errorMessage.textContent =
+      "Este campo não pode estar vazio. Digite uma tarefa.";
     inputContent.classList.add("erroTaskExist");
-
   } else {
-
     if (taskExists(inputValue.toLowerCase())) {
       errorMessage.textContent = "Essa tarefa já existe.";
       inputContent.classList.add("erroTaskExist");
-
     } else {
-
       const newContent = document.createElement("li");
       newContent.textContent = inputValue;
 
       const checkIcon = document.createElement("i");
       checkIcon.classList.add("fa-solid", "fa-check");
 
-      newContent.appendChild(checkIcon);
+      checkIcon.addEventListener("click", function () {
+        const shouldRemove = window.confirm(
+          "Tem certeza de que deseja excluir esta tarefa?"
+        );
+        if (shouldRemove) {
+          removeTask(newContent);
+        }
+      });
 
       tasksContent.appendChild(newContent);
+      newContent.appendChild(checkIcon);
     }
 
     inputContent.value = "";
@@ -46,9 +51,13 @@ function taskExists(taskText) {
   return false;
 }
 
-  inputContent.addEventListener('focus', removeErrorMesage);
+inputContent.addEventListener("focus", removeErrorMesage);
 
-  function removeErrorMesage() {
-    errorMessage.textContent = ''
-    inputContent.classList.remove('erroTaskExist')
-  }
+function removeErrorMesage() {
+  errorMessage.textContent = "";
+  inputContent.classList.remove("erroTaskExist");
+}
+
+function removeTask(taskElement) {
+  tasksContent.removeChild(taskElement);
+}
